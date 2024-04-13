@@ -4,7 +4,9 @@
 */
 
 function reverseString(str) {
-  // Tu solución acá  
+  // Tu solución acá
+  const strRev = str.split("").reverse().join("");
+  return strRev;
 }
 
 /*
@@ -14,6 +16,10 @@ function reverseString(str) {
 */
 function isPalindrome(str) {
   // Tu solución acá
+  var len = Math.floor(str.length / 2);
+  for (var i = 0; i < len; i++)
+    if (str[i] !== str[str.length - i - 1]) return false;
+  return true;
 }
 
 /*
@@ -31,9 +37,25 @@ function isPalindrome(str) {
 
 function closestPair(arr) {
   // Tu solución acá
+  arr.sort((a, b) => a - b);
+
+  // Find the minimum absolute difference between pairs
+  let min_diff = Number.MAX_VALUE;
+  let pairs = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      let diff = Math.abs(arr[i] - arr[j]);
+      if (diff < min_diff) {
+        min_diff = diff;
+        pairs = [[arr[i], arr[j]]];
+      } else if (diff == min_diff) {
+        pairs.push([arr[i], arr[j]]);
+      }
+    }
+  }
+
+  return pairs[0];
 }
-
-
 /*
   Ejercicio 4: Calculadora - Programación Orientada a Objetos
   La calculadora debe ser capaz de realizar operaciones aritméticas básicas, 
@@ -68,6 +90,42 @@ function closestPair(arr) {
 
 class Calculator {
   // Tu solución acá
+  lastResult;
+  add(a, b) {
+    var addition = a + b;
+    this.lastResult = addition;
+    return addition;
+  }
+  subtract(a, b) {
+    var subtraction = a - b;
+    this.lastResult = subtraction;
+    return subtraction;
+  }
+  multiply(a, b) {
+    var multiplication = a * b;
+    this.lastResult = multiplication;
+    return multiplication;
+  }
+  divide(a, b) {
+    var division = a / b;
+    this.lastResult = division;
+    if (b === 0) {
+      throw new Error("Division by zero is not allowed");
+    }
+    return division;
+  }
+  exponentiate(base, exponent) {
+    var power = Math.pow(base, exponent);
+    if (exponent < 0) {
+      throw new Error("Exponentiation with negative exponent is not allowed");
+    } else {
+      this.lastResult = power;
+      return power;
+    }
+  }
+  getLastResult() {
+    return this.lastResult;
+  }
 }
 
 module.exports = {
@@ -75,4 +133,4 @@ module.exports = {
   isPalindrome,
   reverseString,
   Calculator,
-}
+};

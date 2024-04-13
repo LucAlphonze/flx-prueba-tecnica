@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "user1",
+      "username": "juan_usuario",
+      "email": "john.doe@example.com",
       "name": "John",
       "lastname": "Doe",
-      "email": "john.doe@example.com",
-      "status": "active",
-      "age": 30
+      "status": "Active",
+      "age": 30,
+      "id": 1
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "name": "Michael",
       "lastname": "Johnson",
       "email": "michael.johnson@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 35
     },
     {
@@ -33,7 +33,7 @@
       "name": "Emily",
       "lastname": "Brown",
       "email": "emily.brown@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 28
     },
     {
@@ -51,7 +51,7 @@
       "name": "Olivia",
       "lastname": "Jones",
       "email": "olivia.jones@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 32
     },
     {
@@ -69,7 +69,7 @@
       "name": "Sophia",
       "lastname": "Martinez",
       "email": "sophia.martinez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 27
     },
     {
@@ -78,7 +78,7 @@
       "name": "Alexander",
       "lastname": "Hernandez",
       "email": "alexander.hernandez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 33
     },
     {
@@ -96,7 +96,7 @@
       "name": "Benjamin",
       "lastname": "Lopez",
       "email": "benjamin.lopez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 38
     },
     {
@@ -114,7 +114,7 @@
       "name": "Ethan",
       "lastname": "Williams",
       "email": "ethan.williams@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 31
     },
     {
@@ -123,7 +123,7 @@
       "name": "Mia",
       "lastname": "Rodriguez",
       "email": "mia.rodriguez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 26
     },
     {
@@ -141,7 +141,7 @@
       "name": "Harper",
       "lastname": "Lopez",
       "email": "harper.lopez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 34
     },
     {
@@ -150,7 +150,7 @@
       "name": "Aiden",
       "lastname": "Gonzalez",
       "email": "aiden.gonzalez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 39
     },
     {
@@ -168,7 +168,7 @@
       "name": "Liam",
       "lastname": "Flores",
       "email": "liam.flores@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 37
     },
     {
@@ -177,7 +177,7 @@
       "name": "Avery",
       "lastname": "Rivera",
       "email": "avery.rivera@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 41
     },
     {
@@ -195,7 +195,7 @@
       "name": "Jackson",
       "lastname": "Long",
       "email": "jackson.long@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 30
     },
     {
@@ -204,7 +204,7 @@
       "name": "Scarlett",
       "lastname": "Cooper",
       "email": "scarlett.cooper@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 35
     },
     {
@@ -222,7 +222,7 @@
       "name": "Layla",
       "lastname": "Gomez",
       "email": "layla.gomez@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 29
     },
     {
@@ -231,7 +231,7 @@
       "name": "Lucas",
       "lastname": "Hill",
       "email": "lucas.hill@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 33
     },
     {
@@ -249,7 +249,7 @@
       "name": "Mateo",
       "lastname": "Young",
       "email": "mateo.young@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 31
     },
     {
@@ -258,7 +258,7 @@
       "name": "Zoe",
       "lastname": "Adams",
       "email": "zoe.adams@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 34
     },
     {
@@ -276,7 +276,7 @@
       "name": "Carter",
       "lastname": "Green",
       "email": "carter.green@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 32
     },
     {
@@ -285,7 +285,7 @@
       "name": "Riley",
       "lastname": "Nelson",
       "email": "riley.nelson@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 29
     },
     {
@@ -303,7 +303,7 @@
       "name": "Ella",
       "lastname": "Carter",
       "email": "ella.carter@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 33
     },
     {
@@ -312,7 +312,7 @@
       "name": "David",
       "lastname": "Parker",
       "email": "david.parker@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 27
     },
     {
@@ -330,7 +330,7 @@
       "name": "Aiden",
       "lastname": "Wood",
       "email": "aiden.wood@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 30
     },
     {
@@ -339,7 +339,7 @@
       "name": "Madelyn",
       "lastname": "Ross",
       "email": "madelyn.ross@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 32
     },
     {
@@ -357,7 +357,7 @@
       "name": "Penelope",
       "lastname": "Coleman",
       "email": "penelope.coleman@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 28
     },
     {
@@ -366,7 +366,7 @@
       "name": "Elijah",
       "lastname": "Cox",
       "email": "elijah.cox@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 31
     },
     {
@@ -384,7 +384,7 @@
       "name": "Luke",
       "lastname": "Kelly",
       "email": "luke.kelly@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 33
     },
     {
@@ -393,7 +393,7 @@
       "name": "Hazel",
       "lastname": "Edwards",
       "email": "hazel.edwards@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 30
     },
     {
@@ -411,7 +411,7 @@
       "name": "Lillian",
       "lastname": "Rivera",
       "email": "lillian.rivera@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 32
     },
     {
@@ -420,7 +420,7 @@
       "name": "Isaac",
       "lastname": "Cooper",
       "email": "isaac.cooper@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 29
     },
     {
@@ -438,7 +438,7 @@
       "name": "Nathan",
       "lastname": "Gray",
       "email": "nathan.gray@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 30
     },
     {
@@ -447,8 +447,98 @@
       "name": "Grace",
       "lastname": "Allen",
       "email": "grace.allen@example.com",
-      "status": "active",
+      "status": "Active",
       "age": 32
+    },
+    {
+      "username": "prueba_user",
+      "email": "prueba_email",
+      "name": "prueba_nombre",
+      "lastname": "prueba_apellido",
+      "status": "Active",
+      "age": "32",
+      "id": 51
+    },
+    {
+      "username": "prueba_user2",
+      "email": "prueba_email",
+      "name": "prueba_nombre2",
+      "lastname": "prueba_apellido2",
+      "status": "inactive",
+      "age": "32",
+      "id": 52
+    },
+    {
+      "username": "prueba_user3",
+      "email": "prueba_email3",
+      "name": "prueba_nombre3",
+      "lastname": "prueba_apellido3",
+      "status": "Active",
+      "age": "41",
+      "id": 53
+    },
+    {
+      "username": "prueba_user4",
+      "email": "prueba_email4",
+      "name": "prueba_nombre4",
+      "lastname": "prueba_apellido4",
+      "status": "inactive",
+      "age": "23",
+      "id": 54
+    },
+    {
+      "username": "prueba_user5",
+      "email": "prueba_email5",
+      "name": "prueba_nombre5",
+      "lastname": "prueba_apellido5",
+      "status": "Active",
+      "age": "30",
+      "id": 55
+    },
+    {
+      "username": "prueba_user6",
+      "email": "prueba_email6",
+      "name": "prueba_nombre6",
+      "lastname": "prueba_apellido6",
+      "status": "inactive",
+      "age": "15",
+      "id": 56
+    },
+    {
+      "username": "prueba_user7",
+      "email": "prueba_email7",
+      "name": "prueba_nombre7",
+      "lastname": "prueba_apellido7",
+      "status": "Active",
+      "age": "14",
+      "id": 57
+    },
+    {
+      "username": "prueba_user8",
+      "email": "prueba_email8",
+      "name": "prueba_nombre8",
+      "lastname": "prueba_apellido8",
+      "status": "inactive",
+      "age": "20",
+      "id": 58
+    },
+    {
+      "username": "prueba_user9",
+      "email": "prueba_email9",
+      "name": "prueba_nombre9",
+      "lastname": "prueba_apellido9",
+      "status": "inactive",
+      "age": "22",
+      "id": "27750580"
+    },
+    {
+      "username": "asd",
+      "email": "lucasalfonzo19@gmail.com",
+      "name": "asd",
+      "lastname": "Alfonzo",
+      "status": "inactive",
+      "age": "22",
+      "id": "3a17e688"
     }
   ]
 }
