@@ -1,5 +1,5 @@
-import { Space, Table, Tag, Button, Row, Col, Input, Select } from "antd";
-import React, { useEffect, useState } from "react";
+import { Space, Table, Tag, Button, Row, Col, Input } from "antd";
+import React, { useCallback, useEffect, useState } from "react";
 import ModalComponent from "../modal/modal.jsx";
 import { v4 as uuid } from "uuid";
 import qs from "qs";
@@ -11,7 +11,7 @@ const getPages = (params) => ({
   ...params,
 });
 
-function Tabla() {
+const Tabla = () => {
   const [dataSource, setDataSource] = useState([]);
   const endPoint = "http://localhost:4000/users";
   const [loading, setLoading] = useState(false);
@@ -37,46 +37,48 @@ function Tabla() {
     delete: false,
   });
   const [id, setId] = useState();
+  const fecthQuery = `${endPoint}?${qs.stringify(getPages(tableParams))}`;
 
-  useEffect(() => {
-    const query = `${endPoint}?${qs.stringify(getPages(tableParams))}`;
-    fetchData(query);
-  }, [JSON.stringify(tableParams)]);
-
-  const fetchData = async (query) => {
-    const fecthQuery = `${endPoint}?${qs.stringify(getPages(tableParams))}`;
-    setLoading(true);
-    const result = await fetch(query ? query : fecthQuery).then((res) =>
-      res.json()
-    );
+  const fetchData = useCallback(async () => {
+    const result = await fetch(fecthQuery).then((res) => res.json());
     setDataSource([...result]);
-    console.log("fetchData:", result, "query: ", query);
     setLoading(false);
     const total = await fetch(`${endPoint}`).then((res) => res.json());
-    setTableParams({
+    setTableParams((tableParams) => ({
       ...tableParams,
       pagination: {
         ...tableParams.pagination,
         total: total.length,
       },
-    });
-  };
+    }));
+  }, [fecthQuery]);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      fetchData();
+    }, 500);
+  }, [fetchData]);
 
   const onCreate = async (values) => {
     console.log("Received values of form: ", values);
+    setLoading(true);
     if (formValues.edit === true) {
-      await fetch(`${endPoint}/${formValues.id}`, {
-        method: "PUT",
-        body: JSON.stringify(values),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((res) => res.json())
-        .then(() => setOpen(false))
-        .then(() => {
-          const foundIndex = dataSource.findIndex((e) => e.id === values.id);
-          dataSource[foundIndex] = values;
-          setDataSource([...dataSource]);
-        });
+      setTimeout(async () => {
+        await fetch(`${endPoint}/${formValues.id}`, {
+          method: "PUT",
+          body: JSON.stringify(values),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then(() => setOpen(false))
+          .then(() => {
+            const foundIndex = dataSource.findIndex((e) => e.id === values.id);
+            dataSource[foundIndex] = values;
+            setDataSource([...dataSource]);
+            setLoading(false);
+          });
+      }, 500);
     } else {
       await fetch(endPoint, {
         method: "POST",
@@ -92,36 +94,40 @@ function Tabla() {
   };
 
   const onDelete = async () => {
+    setLoading(true);
     console.log(`endpoint : ${endPoint}/${id}`);
-    await fetch(`${endPoint}/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then(() => setOpen(false))
-      .then(async () => {
-        const dataFiltrada = dataSource.filter((e) => e.id !== id);
-        setDataSource([...dataFiltrada]);
-        console.log("dataFiltrada", dataFiltrada);
-        if (dataFiltrada.length === 0) {
-          const previousTableParams = {
-            pagination: {
-              current: tableParams.pagination.current - 1,
-              pageSize: 10,
-            },
-          };
-          const query = `${endPoint}?${qs.stringify(
-            getPages(previousTableParams)
-          )}`;
-          const result = await fetch(query).then((res) => res.json());
-          setDataSource([...result]);
-          setTableParams({
-            ...tableParams,
-            pagination: previousTableParams.pagination,
-          });
-        }
-        setId("");
-      });
+    setTimeout(async () => {
+      await fetch(`${endPoint}/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then(() => setOpen(false))
+        .then(async () => {
+          const dataFiltrada = dataSource.filter((e) => e.id !== id);
+          setDataSource([...dataFiltrada]);
+          console.log("dataFiltrada", dataFiltrada);
+          if (dataFiltrada.length === 0) {
+            const previousTableParams = {
+              pagination: {
+                current: tableParams.pagination.current - 1,
+                pageSize: 10,
+              },
+            };
+            const query = `${endPoint}?${qs.stringify(
+              getPages(previousTableParams)
+            )}`;
+            const result = await fetch(query).then((res) => res.json());
+            setDataSource([...result]);
+            setTableParams({
+              ...tableParams,
+              pagination: previousTableParams.pagination,
+            });
+          }
+          setLoading(false);
+          setId("");
+        });
+    }, 500);
   };
 
   const handleTableChange = (pagination, filters, sorter, extra) => {
@@ -129,6 +135,7 @@ function Tabla() {
     setFilterStatus(filters);
     setTableParams({
       pagination,
+      filters,
       ...sorter,
     });
 
@@ -284,21 +291,6 @@ function Tabla() {
               }}
             />
           </Col>
-          <Col span={4}>
-            {/* <Select
-              style={{
-                width: 200,
-              }}
-              onChange={(e) => {
-                console.log("filter: ", e);
-                setFilterStatus(e);
-              }}
-              options={[
-                { value: "inactive", label: "Inactive" },
-                { value: "active", label: "Active" },
-              ]}
-            /> */}
-          </Col>
 
           <Col span={4}>
             <Button type="primary" className="boton_end" onClick={handleAdd}>
@@ -331,6 +323,6 @@ function Tabla() {
       />
     </div>
   );
-}
+};
 
 export default Tabla;

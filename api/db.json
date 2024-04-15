@@ -452,93 +452,12 @@
     },
     {
       "username": "prueba_user",
-      "email": "prueba_email",
-      "name": "prueba_nombre",
-      "lastname": "prueba_apellido",
-      "status": "Active",
-      "age": "32",
-      "id": 51
-    },
-    {
-      "username": "prueba_user2",
-      "email": "prueba_email",
-      "name": "prueba_nombre2",
-      "lastname": "prueba_apellido2",
-      "status": "inactive",
-      "age": "32",
-      "id": 52
-    },
-    {
-      "username": "prueba_user3",
-      "email": "prueba_email3",
-      "name": "prueba_nombre3",
-      "lastname": "prueba_apellido3",
-      "status": "Active",
-      "age": "41",
-      "id": 53
-    },
-    {
-      "username": "prueba_user4",
-      "email": "prueba_email4",
-      "name": "prueba_nombre4",
-      "lastname": "prueba_apellido4",
-      "status": "inactive",
-      "age": "23",
-      "id": 54
-    },
-    {
-      "username": "prueba_user5",
-      "email": "prueba_email5",
-      "name": "prueba_nombre5",
-      "lastname": "prueba_apellido5",
-      "status": "Active",
-      "age": "30",
-      "id": 55
-    },
-    {
-      "username": "prueba_user6",
-      "email": "prueba_email6",
-      "name": "prueba_nombre6",
-      "lastname": "prueba_apellido6",
-      "status": "inactive",
-      "age": "15",
-      "id": 56
-    },
-    {
-      "username": "prueba_user7",
-      "email": "prueba_email7",
-      "name": "prueba_nombre7",
-      "lastname": "prueba_apellido7",
-      "status": "Active",
-      "age": "14",
-      "id": 57
-    },
-    {
-      "username": "prueba_user8",
-      "email": "prueba_email8",
-      "name": "prueba_nombre8",
-      "lastname": "prueba_apellido8",
-      "status": "inactive",
-      "age": "20",
-      "id": 58
-    },
-    {
-      "username": "prueba_user9",
-      "email": "prueba_email9",
-      "name": "prueba_nombre9",
-      "lastname": "prueba_apellido9",
+      "email": "user@mail.com",
+      "name": "user_nombre",
+      "lastname": "user_apellido",
       "status": "inactive",
       "age": "22",
-      "id": "27750580"
-    },
-    {
-      "username": "asd",
-      "email": "lucasalfonzo19@gmail.com",
-      "name": "asd",
-      "lastname": "Alfonzo",
-      "status": "inactive",
-      "age": "22",
-      "id": "3a17e688"
+      "id": "02a5f5d4"
     }
   ]
 }

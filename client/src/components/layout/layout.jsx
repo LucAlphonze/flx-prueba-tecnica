@@ -31,7 +31,7 @@ const LayoutComponent = () => {
           ]}
         />
         <div className="site-layout-content">
-          <Tabla></Tabla>
+          <Tabla key={"tabla.component"}></Tabla>
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
